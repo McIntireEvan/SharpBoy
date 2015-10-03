@@ -1,0 +1,18 @@
+﻿<Window x:Class="SharpBoyR.Debug"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SharpBoyR"
+        mc:Ignorable="d"
+        Title="Debug" Height="300" Width="799">
+    <Grid>
+
+        <Button x:Name="log_pause" Content="Pause Logging" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" Width="105" Click="log_pause_Click"/>
+        <Button x:Name="log_unpause" Content="Resume Logging" HorizontalAlignment="Left" Margin="120,180,0,0" VerticalAlignment="Top" Width="120" Click="log_unpause_Click"/>
+        <Button x:Name="log_clear" Content="Clear Log" HorizontalAlignment="Left" Margin="245,180,0,0" VerticalAlignment="Top" Width="120" Click="log_clear_Click"/>
+        <Button x:Name="log_save" Content="Save Log" HorizontalAlignment="Left" Margin="370,180,0,0" VerticalAlignment="Top" Width="120" Click="log_save_Click"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="155" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="480"/>
+
+    </Grid>
+</Window>
