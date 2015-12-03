@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
@@ -7,29 +8,40 @@ namespace SharpBoyR
 {
     public partial class MainWindow : Window
     {
-        Debug debug;
+        GameBoy gameboy;
+        //TODO: Move?
 
         public MainWindow()
         {
             InitializeComponent();
-
-            debug = new Debug();
+            //debug.Show();
 
             ROM rom = new ROM("tetris.gb");
             this.Title = rom.Name;
+
+            gameboy = new GameBoy(this, rom);
+            new Thread(() =>
+            {
+                while (true)
+                {
+                    gameboy.Update();
+                }
+            }).Start();
         }
         
         private void OnKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape)
             {
-                if (debug.IsVisible)
+                if (gameboy.debug.IsVisible)
                 {
-                    debug.Hide();
+                    gameboy.debug.Hide();
+                    gameboy.debug.logPaused = true;
                 }
                 else
                 {
-                    debug.Show();
+                    gameboy.debug.Show();
+                    gameboy.debug.logPaused = false;
                 }
             }
         }

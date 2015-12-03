@@ -13,6 +13,12 @@
         <Button x:Name="log_clear" Content="Clear Log" HorizontalAlignment="Left" Margin="245,180,0,0" VerticalAlignment="Top" Width="120" Click="log_clear_Click"/>
         <Button x:Name="log_save" Content="Save Log" HorizontalAlignment="Left" Margin="370,180,0,0" VerticalAlignment="Top" Width="120" Click="log_save_Click"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="155" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="480"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="510,10,0,0" VerticalAlignment="Top" Height="155" Width="130" CanUserSortColumns="False" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Foreground="{x:Null}" Header="Register" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{x:Null}" CanUserSort="False" ClipboardContentBinding="{x:Null}" Foreground="{x:Null}" Header="Value"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>

@@ -10,14 +10,14 @@ namespace SharpBoyR
     /// </summary>
     public partial class Debug : Window
     {
-        bool logPaused;
+        public bool logPaused;
 
         public Debug()
         {
             InitializeComponent();
             textBox.VerticalScrollBarVisibility = ScrollBarVisibility.Visible;
             log_unpause.IsEnabled = false;
-            logPaused = false;
+            logPaused = true;
         }
 
         public void Log(string text)
